@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea Morgan | AndreaKnowsEMR</title>
+    <meta name="description" content="Strategic project management for healthcare IT — and the people who make it happen. You're already a project manager. You just don't call it that.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-navy: #0a2540;
+            --color-blue: #1a5490;
+            --color-teal: #2d7a8f;
+            --color-cream: #faf8f5;
+            --color-gold: #d4a574;
+            --color-text: #2c3e50;
+            --color-text-light: #64748b;
+            --font-display: 'Crimson Pro', serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(45, 122, 143, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 165, 116, 0.2) 0%, transparent 50%);
+            animation: shimmer 15s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero .tagline {
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 400;
+            color: var(--color-gold);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .hero h2 {
+            font-family: var(--font-body);
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3.5rem;
+            line-height: 1.6;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-primary {
+            background: var(--color-gold);
+            color: var(--color-navy);
+            box-shadow: 0 4px 20px rgba(212, 165, 116, 0.4);
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(212, 165, 116, 0.6);
+            background: #e0b586;
+        }
+        
+        .cta-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-navy);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--color-gold);
+            margin: 1rem auto 0;
+        }
+        
+        .section-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--color-text-light);
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+        
+        /* Two Paths Section */
+        .two-paths {
+            background: white;
+        }
+        
+        .paths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .path-card {
+            background: var(--color-cream);
+            padding: 3rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--color-teal);
+            transition: all 0.3s ease;
+        }
+        
+        .path-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-top-color: var(--color-gold);
+        }
+        
+        .path-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-navy);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .path-card p {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .path-card .path-cta {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--color-navy);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .path-card .path-cta:hover {
+            background: var(--color-blue);
+            transform: translateX(5px);
+        }
+        
+        /* B2B Section */
+        .b2b-section {
+            background: var(--color-navy);
+            color: white;
+        }
+        
+        .b2b-section h2 {
+            color: white;
+        }
+        
+        .b2b-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .b2b-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        .value-props {
+            list-style: none;
+            margin: 3rem 0;
+        }
+        
+        .value-props li {
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+        }
+        
+        .value-props strong {
+            color: var(--color-gold);
+        }
+        
+        .b2b-cta-wrapper {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        /* B2C Section */
+        .b2c-section {
+            background: white;
+        }
+        
+        .recognition-box {
+            background: var(--color-cream);
+            padding: 3rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-teal);
+            margin: 3rem 0;
+        }
+        
+        .recognition-box h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-navy);
+            margin-bottom: 1.5rem;
+        }
+        
+        .skills-checklist {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .skills-checklist li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .skills-checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-teal);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .highlight-text {
+            background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-blue) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .b2c-cta-wrapper {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--color-navy);
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .paths-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                min-height: 90vh;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>You're already a project manager.</h1>
+            <p class="tagline">You just don't call it that.</p>
+            <h2>Strategic project management for healthcare IT—<br>and the people who make it happen.</h2>
+            <div class="cta-buttons">
+                <a href="#b2b" class="cta-button cta-primary">For Healthcare IT Companies</a>
+                <a href="#b2c" class="cta-button cta-secondary">For Career Changers & PMs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B Section -->
+    <section class="b2b-section" id="b2b">
+        <h2>For Healthcare IT Companies</h2>
+        <div class="b2b-content">
+            <p>Need strategic project management support for your post-funding growth?</p>
+            <p>I work with healthcare IT startups that have secured Series A+ funding and need operational expertise to scale—without breaking your team or your timelines.</p>
+            
+            <ul class="value-props">
+                <li><strong>20 years leading enterprise EHR implementations</strong> across 15+ health systems</li>
+                <li><strong>Deep clinical and technical fluency</strong> — I translate between executives, developers, and clinicians</li>
+                <li><strong>Proven results:</strong> 40% reduction in provider documentation time while increasing compliance</li>
+                <li><strong>Currently employed</strong> as Senior Healthcare IT Analyst — selective, not desperate</li>
+            </ul>
+            
+            <p style="margin-top: 3rem; font-size: 1.1rem;">Whether you need project-based consulting, fractional PM support, or implementation advisory—let's discuss what makes sense for your stage and goals.</p>
+            
+            <div class="b2b-cta-wrapper">
+                <a href="#contact" class="cta-button cta-primary">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2C Section -->
+    <section class="b2c-section" id="b2c">
+        <h2>For Career Changers & Project Managers</h2>
+        <p class="section-intro">Teachers, Executive Assistants, Event Planners, Healthcare Coordinators—<br>You're already doing project management work.</p>
+        
+        <div class="recognition-box">
+            <h3>Already a PM? Check if this sounds like you:</h3>
+            <ul class="skills-checklist">
+                <li>You manage multiple competing priorities daily</li>
+                <li>You coordinate between different people, teams, or departments</li>
+                <li>You work within budgets and timelines (even if you don't call them that)</li>
+                <li>You handle scope creep—things that weren't part of the original plan</li>
+                <li>You communicate complex information to different audiences</li>
+                <li>You solve problems on the fly when things don't go as planned</li>
+                <li>You manage stakeholder expectations (even if you've never used that term)</li>
+            </ul>
+            
+            <div class="highlight-text">
+                If you checked 3 or more, you're already doing PM work.<br>
+                Now let's get you recognized and paid for it.
+            </div>
+        </div>
+        
+        <p style="font-size: 1.2rem; text-align: center; margin: 3rem auto; max-width: 700px;">
+            I help you translate your experience into language hiring managers understand, build the soft skills that matter more than certifications, and position yourself as the strategic thinker you already are.
+        </p>
+        
+        <p style="font-size: 1.3rem; text-align: center; margin: 2rem auto; font-weight: 600; color: var(--color-navy);">
+            Because people > process. Always.
+        </p>
+        
+        <div class="b2c-cta-wrapper">
+            <a href="3-whys.html" class="cta-button cta-primary">Get the Free 3 Whys Framework</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="b2b-section" id="contact" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <h2>Let's Talk</h2>
+        <div class="b2b-content" style="text-align: center;">
+            <p style="margin-bottom: 3rem;">Whether you're building products clinicians will actually use, or building a career that values what you already know—I'm here to help.</p>
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 500px; margin: 0 auto;">
+                <a href="https://calendly.com/your-link" style="display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1.2rem; background: rgba(255, 255, 255, 0.1); border-radius: 8px; color: white; text-decoration: none; transition: all 0.3s ease; font-size: 1.1rem;" onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                    <span>📅</span>
+                    <span style="font-weight: 600;">Schedule a Call</span>
+                </a>
+                <a href="mailto:andrea@andreaknowsemr.com" style="display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1.2rem; background: rgba(255, 255, 255, 0.1); border-radius: 8px; color: white; text-decoration: none; transition: all 0.3s ease; font-size: 1.1rem;" onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                    <span>📧</span>
+                    <span style="font-weight: 600;">andrea@andreaknowsemr.com</span>
+                </a>
+                <a href="https://linkedin.com/in/AndreaKnowsEMR" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1.2rem; background: rgba(255, 255, 255, 0.1); border-radius: 8px; color: white; text-decoration: none; transition: all 0.3s ease; font-size: 1.1rem;" onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                    <span>💼</span>
+                    <span style="font-weight: 600;">LinkedIn: AndreaKnowsEMR</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Andrea Morgan | AndreaKnowsEMR | Strategic thinking, human execution</p>
+    </footer>
+</body>
+</html>
