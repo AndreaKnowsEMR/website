@@ -1,1 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advisory | AndreaKnowsEMR</title>
+  <meta name="description" content="Fractional advisory for digital health startups that need clinical operations expertise to turn compelling demos into adopted solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --navy: #0a2540;
+      --teal: #2d7a8f;
+      --gold: #d4a574;
+      --cream: #faf8f5;
+      --mid: #555;
+      --border: #e2e0db;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* NAV */
+    nav {
+      border-bottom: 0.5px solid var(--border);
+      padding: 1.25rem 0;
+    }
+
+    nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: 'Crimson Pro', serif;
+      font-size: 19px;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-cta {
+      font-size: 13px;
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-cta:hover { color: var(--navy); }
+
+    /* HERO */
+    .hero {
+      padding: 4rem 0 3rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Crimson Pro', serif;
+      font-size: 46px;
+      line-height: 1.12;
+      color: var(--navy);
+      max-width: 720px;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--teal);
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--mid);
+      max-width: 580px;
+      margin-bottom: 2.25rem;
+      font-weight: 300;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 0.8rem 1.9rem;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn:hover { background: var(--teal); }
+
+    /* CREDENTIALS */
+    .credentials {
+      padding: 1.25rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .credentials .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+    }
+
+    .cred {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      color: var(--mid);
+    }
+
+    .cred-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 3rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.75rem;
+    }
+
+    /* WHO GRID */
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 0.5px solid var(--border);
+    }
+
+    .who-card {
+      background: var(--cream);
+      padding: 1.75rem 1.5rem;
+    }
+
+    .who-number {
+      font-family: 'Crimson Pro', serif;
+      font-size: 40px;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.85rem;
+      font-weight: 600;
+    }
+
+    .who-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+      line-height: 1.35;
+    }
+
+    .who-desc {
+      font-size: 13px;
+      color: var(--mid);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* HOW GRID */
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .how-item {
+      padding-top: 1rem;
+      border-top: 2px solid var(--teal);
+    }
+
+    .how-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .how-desc {
+      font-size: 13px;
+      color: var(--mid);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* PULL QUOTE */
+    .pullquote {
+      background: var(--navy);
+      padding: 3rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .pullquote blockquote {
+      font-family: 'Crimson Pro', serif;
+      font-size: 26px;
+      color: var(--cream);
+      line-height: 1.45;
+      max-width: 620px;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .pullquote cite {
+      font-size: 12px;
+      color: var(--gold);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+
+    /* FORM */
+    .form-section {
+      padding: 3rem 0 4rem;
+    }
+
+    .form-intro {
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+    }
+
+    .form-intro h2 {
+      font-family: 'Crimson Pro', serif;
+      font-size: 32px;
+      color: var(--navy);
+      margin-bottom: 0.85rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .form-intro p {
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    form {
+      max-width: 640px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--navy);
+      background: #fff;
+      border: 0.5px solid var(--border);
+      padding: 0.7rem 0.9rem;
+      outline: none;
+      transition: border-color 0.15s;
+      width: 100%;
+      font-weight: 300;
+      appearance: none;
+      border-radius: 0;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: var(--teal);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+      line-height: 1.65;
+    }
+
+    .hint {
+      font-size: 11px;
+      color: #888;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .submit-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+
+    .selective-note {
+      font-size: 12px;
+      color: #888;
+      font-style: italic;
+    }
+
+    .success-msg {
+      display: none;
+      padding: 1.5rem;
+      border: 0.5px solid var(--teal);
+      background: #fff;
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.75;
+      max-width: 640px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 0.5px solid var(--border);
+      padding: 1.5rem 0;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-brand {
+      font-family: 'Crimson Pro', serif;
+      font-size: 15px;
+      color: var(--navy);
+    }
+
+    .footer-tag {
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 34px; }
+      .pullquote blockquote { font-size: 22px; }
+      .form-intro h2 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a href="/" class="nav-logo">AndreaKnowsEMR</a>
+      <a href="#inquiry" class="nav-cta">Work with Andrea →</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Advisory · Strategy · Translation</p>
+      <h1>Most digital health startups have great technology and <em>zero insight</em> into why health systems won't adopt it.</h1>
+      <p class="hero-sub">I've spent two decades on the clinical operations side of that wall. Now founders use that experience as a secret weapon to turn a compelling demo into an adopted solution.</p>
+      <a href="#inquiry" class="btn">Tell me about your challenge</a>
+    </div>
+  </section>
+
+  <div class="credentials">
+    <div class="wrap">
+      <span class="cred"><span class="cred-dot"></span>20+ years healthcare IT</span>
+      <span class="cred"><span class="cred-dot"></span>MS, Healthcare Informatics · Georgia State University</span>
+      <span class="cred"><span class="cred-dot"></span>Senior IT Project Manager, major health system</span>
+      <span class="cred"><span class="cred-dot"></span>Author · The Efficiency Prescription</span>
+      <span class="cred"><span class="cred-dot"></span>AAIC Framework</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <p class="section-label">Who I work with</p>
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="who-number">01</div>
+          <p class="who-title">Growth-stage digital health companies</p>
+          <p class="who-desc">You've secured funding and proven the concept. But scaling into health systems requires clinical credibility your current team doesn't have. You need someone who knows how decisions actually get made inside those organizations.</p>
+        </div>
+        <div class="who-card">
+          <div class="who-number">02</div>
+          <p class="who-title">Medical device companies expanding into software</p>
+          <p class="who-desc">You know your hardware inside and out. But when your roadmap crosses into clinical workflow, patient data, or EMR integration — the rules change completely. You need a translator, not another engineer.</p>
+        </div>
+        <div class="who-card">
+          <div class="who-number">03</div>
+          <p class="who-title">International health tech entering the US market</p>
+          <p class="who-desc">Your product works. Your market data is solid. But American clinical culture, EMR infrastructure, and health system procurement are their own language. You need someone fluent in both before your first US meeting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="section-label">How I help</p>
+      <div class="how-grid">
+        <div class="how-item">
+          <p class="how-title">Adoption strategy</p>
+          <p class="how-desc">Why health systems are saying no — and exactly how to fix it before your next pitch.</p>
+        </div>
+        <div class="how-item">
+          <p class="how-title">Playbook review</p>
+          <p class="how-desc">Your implementation approach seen through the eyes of the buyer. Honest, specific, actionable.</p>
+        </div>
+        <div class="how-item">
+          <p class="how-title">Team coaching</p>
+          <p class="how-desc">Getting your customer success team conversant in healthcare culture — so they walk into every room ready to close.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pullquote">
+    <div class="wrap">
+      <blockquote>"The right clients find us because the problem is specific and the expertise is real."</blockquote>
+      <cite>Andrea Morgan, MS · AndreaKnowsEMR</cite>
+    </div>
+  </div>
+
+  <section class="form-section" id="inquiry">
+    <div class="wrap">
+      <div class="form-intro">
+        <h2>Complex problems. Specific expertise. This is where translation begins.</h2>
+        <p>I take on a small number of fractional advisory clients at a time. If your challenge aligns with what I do, I'll reach out within 48 hours to schedule a discovery conversation.</p>
+      </div>
+
+      <form id="inquiry-form" onsubmit="handleSubmit(event)">
+        <div class="field">
+          <label for="company">Company name, stage, and website</label>
+          <input type="text" id="company" placeholder="e.g. HealthCo · Series A · healthco.com" required />
+        </div>
+
+        <div class="field">
+          <label for="q1">Think about your last presentation that didn't convert. What would you say differently if you had five more minutes in that room?</label>
+          <textarea id="q1" placeholder="Be specific. Vague answers tell us less than you think." required></textarea>
+          <span class="hint">This question matters more than your pitch deck.</span>
+        </div>
+
+        <div class="field">
+          <label for="q2">How has your product positioning evolved in the last 90 days?</label>
+          <textarea id="q2" placeholder="What changed, what didn't, and why." required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="q3">What does success look like in 6 months?</label>
+          <textarea id="q3" placeholder="Specific outcomes, not aspirations." required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="email">Your email address</label>
+          <input type="email" id="email" placeholder="you@company.com" required />
+        </div>
+
+        <div class="submit-wrap">
+          <button type="submit" class="btn">Submit inquiry</button>
+          <p class="selective-note">We respond to every submission. We say yes to very few.</p>
+        </div>
+      </form>
+
+      <div class="success-msg" id="success-msg">
+        Thank you. Your inquiry has been received. If there's a potential fit, you'll hear from Andrea within 48 hours. If not, you'll hear that too — because your time matters.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span class="footer-brand">AndreaKnowsEMR</span>
+      <span class="footer-tag">Strategic thinking, human execution.</span>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('inquiry-form').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+      document.getElementById('success-msg').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
